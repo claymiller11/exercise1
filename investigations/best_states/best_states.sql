@@ -1,0 +1,1 @@
+select state, avg(percent) as avg_percentile from (select * from high_effective_scores_percentiles union select * from low_effective_scores_percentiles union select * from low_readmission_scores_percentiles) newt group by state order by avg_percentile desc limit 10;

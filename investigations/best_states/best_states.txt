@@ -1,0 +1,13 @@
+Below are the 10 states that are the best models of high quality healthcare.
+UT      0.4680269868791251
+WI      0.460111252679573
+SD      0.4587133704687826
+CO      0.4562722733791596
+ME      0.44792833413378025
+MN      0.4386304933397189
+KS      0.4324096124336223
+ID      0.4309002838640234
+MT      0.42752697696067743
+IN      0.423903336386179
+
+This process and explanation for this result is almost identitical to that of the best hospitals. Once we have the percentile for each measure for each hospital, we just group by state and then take the average. It is exactly the same thinking as for best hospitals. 

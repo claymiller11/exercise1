@@ -1,0 +1,14 @@
+Below are the 10 best hospitals that are models of high quality care. 
+
+SANFORD MEDICAL CENTER WHEATON  0.9543410963821467
+MARTIN COUNTY HOSPITAL DISTRICT 0.9251012928446857
+MINIMALLY INVASIVE SURGERY HOSPITAL     0.8849652220438737
+PHILLIPS EYE INSTITUTE  0.8849652220438737
+HELEN HAYES HOSPITAL    0.8223487345561084
+MORRISON COMMUNITY HOSPITAL     0.8081123244929798
+PERSHING GENERAL HOSPITAL       0.8081123244929798
+KANSAS SURGERY & RECOVERY CENTER        0.7923923984109903
+TEXAS ORTHOPEDIC HOSPITAL       0.7842531048885343
+CHIPPEWA VALLEY HOSPITAL        0.7693701266757438
+
+In order to determine which hospitals were the best for models for high quality care, I decided to use the scores for different procedures/measures and see which hospitals consistently performed high across many different procedures. There are many different procedures that are outlined in the data dictionary procided. There is a corresponding score for each procedure, yet that score might be out of 100 or it might have no bounds. Furthermore, for a given procedure a high score might be good but for others a low score is desirable (such as for average number of minutes one waited in the ER before being seen). Thus making sense of the scores was difficult. I broke the data into two categories - those where a high score was better and those where a low score was better. There were also a few measures which I was unsure how to assess so I left them out of my analysis (only a handful). Once the data were broken into these two categories, I could assign a percentile to each hospital for each measure with the percent_rank function. This is will ensure that regardless of the scale of the score, the hospitals percentile will always be accurate. Also, this is easy to reverse and have "good" be 0 and percentiles be assigned with higher percentiles given to lower scores. So now that we can look at how hospitals scored relative to all of the other hospitals across a variety of measures, we can take the average percentile for all the hospitals to get an average percentile. This will be the metric used to rank hospitals in terms of quality. It makes the most sense because we have taken all procedures into account and now we are looking at the hospitals who on average, get higher percentile marks than other hospitals. Above you can see the 10 hospitals that scored the highest and their average percentile for the measures. 

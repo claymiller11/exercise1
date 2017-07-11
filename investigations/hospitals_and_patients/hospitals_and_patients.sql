@@ -1,0 +1,2 @@
+create table best_hospitals as select hospital_name, avg(percent) as avg_percentile from (select * from high_effective_scores_percentiles union select * from low_effective_scores_percentiles union select * from low_readmission_scores_percentiles) newt group by hospital_name order by avg_percentile desc;
+select covar_samp(avg_percentile, overall_score)/(stddev(avg_percentile)*stddev(overall_score)) from rating as r inner join best_hospitals as bh on r.hospital_name = bh.hospital_name limit 10;

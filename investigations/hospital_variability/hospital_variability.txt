@@ -1,0 +1,16 @@
+ Below are the 10 measures that have the greatest variability between hospitals:
+
+ Median Time from ED Arrival to ED Departure for Admitted ED Patients    ED_1b   8617.740839212485
+Admit Decision Time to ED Departure Time for Admitted Patients  ED_2b   3864.6924460743626
+Median Time from ED Arrival to ED Departure for Discharged ED Patients  OP_18b  1656.5529409803219
+Median Time to Transfer to Another Facility for Acute Coronary Intervention- Reporting Rate     OP_3b   869.0306968514058
+Thrombolytic Therapy    STK_4   481.98665882944323
+Head CT Scan Results for Acute Ischemic Stroke or Hemorrhagic Stroke Patients who Received Head CT or MRI Scan Interpretation Within 45 Minutes of ED Arrival   OP_23   477.18888614639195
+Fibrinolytic Therapy Received within 30 Minutes of Hospital Arrival     AMI_7a  352.6666666666667
+Fibrinolytic Therapy Received Within 30 Minutes of ED Arrival   OP_2    325.7463235294118
+Median Time to Pain Management for Long Bone Fracture   OP_21   314.0819735739422
+Median Time from ED Arrival to Provider Contact for ED patients OP_20   285.00371267017533
+
+
+We can see that most of these deal with time, which makes a lot of sense because opposed to more traditional scores, like something bounded by a scale of 1-10 or 1-100, time has no bound and thus can have a very large upper limit, thus increasing the variance. 
+To get these values, I used a simple and straightforward approach. I used the variance function in sql to get the variance of the scores for each procedure. I then sorted by the highest variance and joined the measure table so that I could pull in the names to get a better picture of what the measures are. 

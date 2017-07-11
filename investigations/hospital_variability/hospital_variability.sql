@@ -1,0 +1,1 @@
+select m.measure_name, t2.measure_id, t2.var_score from (select measure_id, variance(score_int) as var_score from (select * from high_effective_scores union select * from low_effective_scores union select * from low_readmission_scores) newt group by measure_id order by var_score desc limit 10) t2 inner join measures as m on t2.measure_id = m.measure_id order by var_score desc;
